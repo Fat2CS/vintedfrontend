@@ -7,6 +7,7 @@ import Offer from "./containers/Offer";
 
 import Home from "./containers/Home";
 import Sign from "./containers/Signup";
+import Login from "./containers/login";
 // import logo from "./img/vinted9809.";
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/" element={<Home offers={offers} />} />
         <Route path="/offer/:id" element={<Offer />} />
         <Route path="/signup/" element={<Sign />} />
+        <Route path="/login/" element={<Login />} />
       </Routes>
     </Router>
   );

@@ -3,41 +3,39 @@ import { useState } from "react";
 import axios from "axios";
 
 const Sign = () => {
-  const [name, setName] = useState("");
+  const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
-  const fetchData = async () => {
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-      {
-        email: "email",
-        username: "name",
-        password: "password"
-        // "newsletter": true
-      }
-    );
-    console.log(response.data);
-
-    setIsLoading(false);
-  };
-  fetchData();
-
-  return isLoading === true ? (
+  return isLoading === false ? (
     <div> En cours de chargement</div>
   ) : (
-    <body>
+    <div>
       <h1>S'inscrire</h1>
       <form
         on
-        onSubmit={(event) => {
+        onSubmit={async (event) => {
           event.preventDefault();
-          fetchData();
+          try {
+            const response = await axios.post(
+              "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+              {
+                email: " email",
+                username: " username"
+                // "newsletter": true
+              }
+            );
+            console.log(response.data);
+
+            setIsLoading(false);
+          } catch (error) {
+            console.log(error.message);
+          }
         }}
       >
         <input
-          value={name}
+          value={username}
           type="text"
           placeholder="nom d'utilisateur"
           onChange={(event) => {
@@ -63,7 +61,7 @@ const Sign = () => {
         />
         <input type="submit" value="s'inscrire" />
       </form>
-    </body>
+    </div>
   );
 };
 export default Sign;
