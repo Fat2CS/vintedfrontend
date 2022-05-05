@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Offer from "./containers/Offer";
 
 import Home from "./containers/Home";
+import Sign from "./containers/Signup";
 // import logo from "./img/vinted9809.";
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home offers={offers} />} />
         <Route path="/offer/:id" element={<Offer />} />
+        <Route path="/signup/" element={<Sign />} />
       </Routes>
     </Router>
   );

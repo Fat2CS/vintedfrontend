@@ -4,6 +4,7 @@ import axios from "axios";
 
 const Offer = () => {
   const { id } = useParams();
+  console.log(id);
   const [offer, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true);
 

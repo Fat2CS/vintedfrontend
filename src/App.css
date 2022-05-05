@@ -39,3 +39,11 @@ main {
   /* width: 120 px; */
   border: solid violet 2px;
 }
+
+/* sign up  */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

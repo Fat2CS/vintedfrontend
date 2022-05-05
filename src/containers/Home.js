@@ -12,39 +12,39 @@ const Home = ({ offers }) => {
       </div>
       {/* affichage photos */}
       <div className="App">
-        <containertop>
-          <p>grosse Photo</p>
-          <img
-            alt="banniere"
-            src={banner}
-            style={{
-              width: "1720px",
-              height: "454px",
-              objectFit: "cover",
-              marginTop: "-6%"
-            }}
-          ></img>
-        </containertop>
+        <p>grosse Photo</p>
+        <img
+          alt="banniere"
+          src={banner}
+          style={{
+            width: "1720px",
+            height: "454px",
+            objectFit: "cover",
+            marginTop: "-6%"
+          }}
+        ></img>
+
         <main>
           {offers.map((offer, index) => {
             // console.log("là =>", offers);
             // console.log(offer.product_price);
             return (
-              <div key={index}>
-                <div className="annonce">
-                  {/* <p>{offer.owner.account.avatar.secure_url}</p> */}
-                  <p>{offer.owner.account.username}</p>
-                  {offer.product_pictures[0] ? (
-                    <img
-                      src={offer.product_pictures[0].secure_url}
-                      alt="imgprod"
-                    />
-                  ) : null}
+              <Link to={`/offer/${offer._id}`}>
+                <div key={index}>
+                  <div className="annonce">
+                    {/* <p>{offer.owner.account.avatar.secure_url}</p> */}
+                    <p>{offer.owner.account.username}</p>
+                    {offer.product_pictures[0] ? (
+                      <img
+                        src={offer.product_pictures[0].secure_url}
+                        alt="imgprod"
+                      />
+                    ) : null}
 
-                  <p>{offer.product_price}€</p>
-                  <p>{offer.product_details[0].MARQUE}</p>
+                    <p>{offer.product_price}€</p>
+                    <p>{offer.product_details[0].MARQUE}</p>
 
-                  {/* {((item,index)=>{
+                    {/* {((item,index)=>{
                     const keys=Object.keys(item);
                     return(
                       <div key={index}>
@@ -52,16 +52,17 @@ const Home = ({ offers }) => {
                         </div
                     )
                   })} */}
-                </div>
+                  </div>
 
-                {/* {offer.product_details.map((details) => {
+                  {/* {offer.product_details.map((details) => {
                   console.log(details.offer.product_details);
                   return <p>{offer.details.product_details.marque}</p>;
                 })}
                 return( )<p></p> */}
-                {/* <p>{index.owner.account.avatar.secure_url}</p> */}
-                {/* <img src={offers.product_pictures.url} alt="" /> */}
-              </div>
+                  {/* <p>{index.owner.account.avatar.secure_url}</p> */}
+                  {/* <img src={offers.product_pictures.url} alt="" /> */}
+                </div>
+              </Link>
             );
           })}
         </main>
