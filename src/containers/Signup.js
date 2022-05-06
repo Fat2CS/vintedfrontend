@@ -8,32 +8,29 @@ const Sign = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newsletter, setNewsletter] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
 
-  return isLoading === false ? (
-    <div> En cours de chargement</div>
-  ) : (
-      <
-      const handleSubmit = {async (event) => { 
-        event.preventDefault();
-        try {
-          const response = await axios.post(
-            "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-            {
-              email: email,
-              username: username,
-              newsletter: newsletter
-            }
-          );
-          handleToken(response.data.token);
-          console.log(response.data);
-
-          setIsLoading(false);
-        } catch (error) {
-          console.log(error.message);
-        }};
-      
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+        {
+          email: email,
+          username: username,
+          newsletter: newsletter
+        }
+      );
+      handleToken(response.data.token);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+  return (
+    <div>
       <h1>S'inscrire</h1>
+
       <form onSubmit={handleSubmit}>
         <input
           value={username}
@@ -80,6 +77,6 @@ const Sign = ({ handleToken }) => {
         <Link to={"/login"}>Tu as déjà un compte ? Connecte-toi !</Link>
       </form>
     </div>
-   );
+  );
 };
 export default Sign;
