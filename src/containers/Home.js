@@ -1,12 +1,29 @@
 import { Link } from "react-router-dom";
-import Header from "../componant/header";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 import banner from "../img/banner.jpg";
-const Home = ({ offers }) => {
-  console.log("Home", offers);
-  return (
+
+const Home = () => {
+  const [offers, setOffers] = useState({});
+  const [isloading, setIsLoading] = useState(true);
+
+  const fetchData = async () => {
+    const response = await axios.get(
+      "https://lereacteur-vinted-api.herokuapp.com/offers"
+    );
+    console.log("ici => ", response.data);
+    setOffers(response.data.offers);
+    setIsLoading(false);
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
+  return isloading === true ? (
+    <span> En cours de chargement</span>
+  ) : (
     <div>
       Home
-      {Header}
       {/* <Link to={"/containers/Offer"}> Go to Offer</Link> */}
       <div className="Head"></div>
       {/* affichage photos */}

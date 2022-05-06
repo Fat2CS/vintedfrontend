@@ -1,3 +1,7 @@
+::placeholder {
+  color: #d8d8d9;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -6,7 +10,14 @@ header {
 }
 
 .recherche {
-  width: 600px;
+  width: 590px;
+  height: 37px;
+
+  border: none;
+  background-color: #f5f6f7;
+  padding-left: 40px;
+  outline: none;
+  font-size: 16px;
 }
 
 /* grande photo */
@@ -21,15 +32,12 @@ containertop {
   object-fit: cover;
   /* display: flex; */
 }
+/* main */
 main {
   display: flex;
   flex-wrap: wrap;
   width: 1720px;
-
-  /* flex-direction: row; */
   border: solid black;
-  /* margin: 60px auto; */
-  /* width: calc(100% / 5 - 9.6px); */
 }
 .annonce {
   height: 470px;
@@ -41,9 +49,27 @@ main {
 }
 
 /* sign up  */
-body {
+/* body {
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; */
+/* align-items: center; */
+/* flex-direction: column; */
+/* } */
+form {
+  display: flex;
+  /* justify-content: space-around; */
+  flex-direction: column;
+  border: solid red;
+}
+
+form input {
+  /* background-color: aqua; */
+  display: flex;
+  border: none;
+  height: 23px;
+  width: 145px;
+}
+input.subsign {
+  background-color: #0cadb7;
 }

@@ -1,12 +1,13 @@
 import { useState } from "react";
 import axios from "axios";
-
+import Header from "../componant/header";
 const Login = () => {
   const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
 
   return (
-    <div>
+    <div className="form">
+      <Header />
       <h1>Se connecter</h1>
       <form
         onSubmit={async (event) => {
@@ -42,8 +43,8 @@ const Login = () => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="se connecter" />
       </form>
+      <input className="subm" type="submit" value="se connecter" />
     </div>
   );
 };

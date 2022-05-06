@@ -1,39 +1,40 @@
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Sign = () => {
+const Sign = ({ handleToken }) => {
   const [username, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [newsletter, setNewsletter] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   return isLoading === false ? (
     <div> En cours de chargement</div>
   ) : (
-    <div>
-      <h1>S'inscrire</h1>
-      <form
-        on
-        onSubmit={async (event) => {
-          event.preventDefault();
-          try {
-            const response = await axios.post(
-              "https://lereacteur-vinted-api.herokuapp.com/user/signup",
-              {
-                email: " email",
-                username: " username"
-                // "newsletter": true
-              }
-            );
-            console.log(response.data);
+      <
+      const handleSubmit = {async (event) => { 
+        event.preventDefault();
+        try {
+          const response = await axios.post(
+            "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+            {
+              email: email,
+              username: username,
+              newsletter: newsletter
+            }
+          );
+          handleToken(response.data.token);
+          console.log(response.data);
 
-            setIsLoading(false);
-          } catch (error) {
-            console.log(error.message);
-          }
-        }}
-      >
+          setIsLoading(false);
+        } catch (error) {
+          console.log(error.message);
+        }};
+      
+      <h1>S'inscrire</h1>
+      <form onSubmit={handleSubmit}>
         <input
           value={username}
           type="text"
@@ -42,7 +43,6 @@ const Sign = () => {
             setName(event.target.value);
           }}
         />
-
         <input
           value={email}
           type="email"
@@ -59,9 +59,27 @@ const Sign = () => {
             setPassword(event.target.value);
           }}
         />
-        <input type="submit" value="s'inscrire" />
+        <div className="checkbox_container">
+          <div className="checkbox">
+            <input
+              className="checkbox_input"
+              type="checkbox"
+              onClick={() => {
+                setNewsletter(!newsletter);
+              }}
+            />
+            <span>S'inscrire à notre lewsletter</span>
+          </div>
+          <p>
+            En m'inscrivant je confirme avoir lu et accepté les Termes &
+            Conditions et Politique de Confidentialité de Vinted. Je confirme
+            avoir au moins 18 ans.
+          </p>
+        </div>
+        <input className="subsign" type="submit" value="s'inscrire" />
+        <Link to={"/login"}>Tu as déjà un compte ? Connecte-toi !</Link>
       </form>
     </div>
-  );
+   );
 };
 export default Sign;
