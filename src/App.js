@@ -11,13 +11,12 @@ import Home from "./containers/Home";
 import Sign from "./containers/Signup";
 import Login from "./containers/login";
 import Header from "./componant/header";
+import Publish from "./containers/Publish";
 
 // import logo from "./img/vinted9809.";
 
 function App() {
-  const { userToken, setUserToken } = useState(
-    Cookies.get("userToken") || null
-  );
+  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
 
   const handleToken = (token) => {
     if (token) {
@@ -35,8 +34,12 @@ function App() {
         {/*  */}
         <Route path="/" element={<Home />} />
         <Route path="/offer/:id" element={<Offer />} />
-        <Route path="/signup/" element={<Sign handleToken={handleToken} />} />
-        <Route path="/login/" element={<Login handleToken={handleToken} />} />
+        <Route path="/signup" element={<Sign handleToken={handleToken} />} />
+        <Route path="/login" element={<Login handleToken={handleToken} />} />
+        <Route
+          path="/publish"
+          element={<Publish handleToken={handleToken} />}
+        />
       </Routes>
     </Router>
   );

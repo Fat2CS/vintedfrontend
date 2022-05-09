@@ -21,7 +21,7 @@ const Login = ({ handleToken }) => {
       navigate("/");
       console.log(response.data);
     } catch (error) {
-      console.log(error.message);
+      console.log(error.response);
     }
   };
   return (
