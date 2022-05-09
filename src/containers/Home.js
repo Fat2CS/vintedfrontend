@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import banner from "../img/banner.jpg";
+import "./home.scss";
 
 const Home = () => {
   const [offers, setOffers] = useState({});
@@ -25,21 +26,34 @@ const Home = () => {
     <div>
       Home
       {/* <Link to={"/containers/Offer"}> Go to Offer</Link> */}
-      <div className="Head"></div>
-      {/* affichage photos */}
-      <div className="App">
-        <p>grosse Photo</p>
-        <img
-          alt="banniere"
-          src={banner}
-          style={{
-            width: "1720px",
-            height: "454px",
-            objectFit: "cover",
-            marginTop: "-6%"
-          }}
-        ></img>
+      <div className="Head">
+        {/* affichage photos */}
+        <div className="App">
+          <p>grosse Photo</p>
+          <img
+            alt="banniere"
+            src={banner}
+            style={{
+              width: "1720px",
+              height: "454px",
+              backgroundsize: "cover",
+              objectFit: "cover",
 
+              marginTop: "-6%",
+              position: "relative",
+              backgroundposition: "50%50%",
+              borderslice: "50 0 50 0 fill",
+              borderwidth: "20 0 20 0"
+            }}
+          ></img>
+          <div className="square">
+            <h3> Prêt à faire du tri dans vos placards</h3>
+
+            <button>
+              <p>Commencer à vendre</p>
+            </button>
+          </div>
+        </div>
         <main>
           {offers.map((offer, index) => {
             return (
@@ -54,8 +68,13 @@ const Home = () => {
                         alt="imgprod"
                       />
                     ) : null}
-                    <p>{offer.product_price}€</p>
-                    <p>{offer.product_details[0].MARQUE}</p>
+                    <div className="description">
+                      <h4>{offer.product_price}€</h4>
+
+                      <span>{offer.product_details[0].MARQUE}</span>
+
+                      <span>{offer.product_details[0].TAILLE}</span>
+                    </div>
                   </div>
                 </div>
               </Link>

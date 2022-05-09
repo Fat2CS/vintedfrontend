@@ -1,0 +1,55 @@
+.square {
+  height: 220px;
+  width: 360px;
+  background-color: rgb(255, 255, 255);
+  padding: 25px;
+  border-radius: 3px;
+  font-size: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 220px;
+  box-shadow: rgba(17, 17, 17, 0.24) 0px 0px 2px 0px;
+}
+p {
+  padding-bottom: 15px;
+}
+.square button {
+  cursor: pointer;
+  //   outline: (255, 255, 255) solid 0px;
+  height: 45px;
+  width: 200px;
+  background-color: rgb(43, 174, 183);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  border: 0px none rgb(255, 255, 255);
+  padding: 0px 14px;
+  padding-bottom: 20px;
+}
+span {
+  font-size: 12px;
+  color: rgb(153, 153, 153);
+}
+h4 p {
+  font-size: 14px;
+  color: rgb(60, 56, 56);
+}
+.description {
+  -webkit-font-smoothing: antialiased;
+  align-items: center;
+  background: rgb(255, 255, 255) (27, 27, 27) none repeat scroll 0% 0% / auto
+    padding-box border-box;
+  box-sizing: border-box;
+  display: flex;
+  padding: -8px;
+  position: relative;
+  width: 181.328px;
+  margin-bottom: 60px;
+  align-content: space-around;
+}
+
+.annonce img {
+  margin-bottom: -10px;
+}

@@ -1,7 +1,8 @@
 import logo from "../img/vinted9809.jpeg";
 import { Link } from "react-router-dom";
+import "./header.scss";
 
-const Header = () => {
+const Header = ({ handleToken, usertoken }) => {
   return (
     <header>
       <div className="logo">
@@ -11,19 +12,35 @@ const Header = () => {
           style={{ height: "90px", display: "flex" }}
         />
       </div>
-      {/* Bouttons du header */}
-      <div className="recherche">
-        <input placeholder="recherche des articles"></input>
-      </div>
-      <div className="buttons">
-        <Link to="/Signup">
-          <button> s'incrire </button>
-        </Link>
-        <Link to="/login">
-          <button>se connecter</button>
-        </Link>
-        <button>vends tes articles</button>
-      </div>
+
+      {/* BOUTON HEADER */}
+
+      {!usertoken ? (
+        <>
+          <div className="recherche">
+            <input placeholder="recherche des articles"></input>
+          </div>
+          <div className="buttons">
+            <Link to="/Signup">
+              <button> s'incrire </button>
+            </Link>
+            <Link to="/login">
+              <button>se connecter</button>
+            </Link>
+          </div>
+        </>
+      ) : (
+        <>
+          <button
+            onClick={() => {
+              handleToken();
+            }}
+          >
+            Déconnexion
+          </button>
+          <button>vends tes articles</button>
+        </>
+      )}
     </header>
   );
 };

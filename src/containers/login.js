@@ -1,38 +1,40 @@
 import { useState } from "react";
 import axios from "axios";
-import Header from "../componant/header";
-const Login = () => {
-  const [mail, setMail] = useState("");
-  const [password, setPassword] = useState("");
+import { useNavigate } from "react-router-dom";
 
+const Login = ({ handleToken }) => {
+  const [email, seteMail] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/login",
+        {
+          email: email,
+          password: password
+        }
+      );
+      console.log(response.data);
+      handleToken(response.data.token);
+      navigate("/");
+      console.log(response.data);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="form">
-      <Header />
       <h1>Se connecter</h1>
-      <form
-        onSubmit={async (event) => {
-          event.preventDefault();
-          try {
-            const response = await axios.post(
-              "https://lereacteur-vinted-api.herokuapp.com/user/login",
-              {
-                email: "johndoe@lereacteur.io",
-                password: "azerty"
-              }
-            );
-            console.log(response.data);
-          } catch (error) {
-            console.log(error.message);
-          }
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <input
           className="form"
-          valeur={mail}
+          valeur={email}
           type="email"
           placeholder="adresse email"
           onChange={(event) => {
-            setMail(event.target.value);
+            seteMail(event.target.value);
           }}
         />
         <input
@@ -43,8 +45,8 @@ const Login = () => {
             setPassword(event.target.value);
           }}
         />
+        <input className="subm" type="submit" value="se connecter" />
       </form>
-      <input className="subm" type="submit" value="se connecter" />
     </div>
   );
 };

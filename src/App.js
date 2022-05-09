@@ -1,6 +1,6 @@
 import "./App.css";
 
-// import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 // import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -15,16 +15,22 @@ import Header from "./componant/header";
 // import logo from "./img/vinted9809.";
 
 function App() {
+  const { userToken, setUserToken } = useState(
+    Cookies.get("userToken") || null
+  );
+
   const handleToken = (token) => {
     if (token) {
       Cookies.set("usertoken", token, { expires: 7 });
+      setUserToken(token);
     } else {
       Cookies.remove("userToken");
+      setUserToken(null);
     }
   };
   return (
     <Router>
-      <Header handleToken={handleToken} />
+      <Header handleToken={handleToken} userToken={userToken} />
       <Routes>
         {/*  */}
         <Route path="/" element={<Home />} />
