@@ -50,10 +50,10 @@ const Offer = () => {
         })}
 
         <button
-          onClick={() => {
+          onClick={(userToken) => {
             {
               {
-                handlepayment;
+                handlepayment(userToken);
               }
             }
             // console.log(handlepayment);
