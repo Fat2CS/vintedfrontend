@@ -24,7 +24,9 @@ const Offer = () => {
 
   const handlepayment = (userToken) => {
     if (userToken) {
-      navigate("/payment", { offer: { title: "", price: "" } });
+      navigate("/payment", {
+        state: { title: offer.product_name, price: offer.product_price }
+      });
     } else {
       navigate("/signup");
     }
