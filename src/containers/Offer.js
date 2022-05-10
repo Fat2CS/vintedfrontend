@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Offer = () => {
+const Offer = (userToken) => {
   const { id } = useParams();
   console.log(id);
   const navigate = useNavigate();
@@ -53,11 +53,8 @@ const Offer = () => {
 
         <button
           onClick={(userToken) => {
-            {
-              {
-                handlepayment(userToken);
-              }
-            }
+            handlepayment(userToken);
+
             // console.log(handlepayment);
           }}
         >

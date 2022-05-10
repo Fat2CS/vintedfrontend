@@ -1,8 +1,8 @@
 import { useLocation } from "react-router-dom";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./components/CheckoutForm";
-import { CardElement, useStripe, useElements } from "react-stripe-js";
+import CheckoutForm from "../componant/CheckoutForm";
+
 import axios from "axios";
 
 const stripePromise = loadStripe(
@@ -37,6 +37,7 @@ const Payment = () => {
           </li>
         </ul>
         <Elements stripe={stripePromise}></Elements>
+        <CheckoutForm />
       </div>
       // <span> {title} </span>
       <h2> payer</h2>
