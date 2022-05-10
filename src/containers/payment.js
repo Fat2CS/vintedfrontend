@@ -23,7 +23,16 @@ const Payment = () => {
         <p>Résumé de la commande</p>;
         <ul>
           <li>
-            <span>commande</span>
+            <span>commande </span>
+            <span> {total}€</span>
+          </li>
+          <li><span>Frais protecion acheteurs</span>
+            <span> {protectBuyer}€</span> </li>
+          <>
+    
+            <span>Frais de port </span>
+            <span> {shippingPrice}€</span>
+        
           </li>
         </ul>
       </div>
