@@ -1,7 +1,4 @@
 import "./App.css";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./components/CheckoutForm";
 
 import React, { useState } from "react";
 // import axios from "axios";

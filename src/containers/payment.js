@@ -6,7 +6,7 @@ import { CardElement, useStripe, useElements } from "react-stripe-js";
 import axios from "axios";
 
 const stripePromise = loadStripe(
-  pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP
+  "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
 );
 
 const Payment = () => {
@@ -26,15 +26,17 @@ const Payment = () => {
             <span>commande </span>
             <span> {total}€</span>
           </li>
-          <li><span>Frais protecion acheteurs</span>
-            <span> {protectBuyer}€</span> </li>
-          <>
-    
+          <li>
+            <span>Frais protecion acheteurs</span>
+            <span> {protectBuyer}€</span>{" "}
+          </li>
+
+          <li>
             <span>Frais de port </span>
             <span> {shippingPrice}€</span>
-        
           </li>
         </ul>
+        <Elements stripe={stripePromise}></Elements>
       </div>
       // <span> {title} </span>
       <h2> payer</h2>
