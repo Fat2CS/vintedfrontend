@@ -3,12 +3,14 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Offer = (userToken) => {
+const Offer = ({ usertoken }) => {
   const { id } = useParams();
   console.log(id);
   const navigate = useNavigate();
   const [offer, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true);
+
+  console.log(usertoken, "<<<<<<<");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,8 +24,8 @@ const Offer = (userToken) => {
     fetchData();
   }, [id]);
 
-  const handlepayment = (userToken) => {
-    if (userToken) {
+  const handlepayment = () => {
+    if (usertoken) {
       navigate("/payment", {
         state: { title: offer.product_name, price: offer.product_price }
       });
@@ -35,31 +37,38 @@ const Offer = (userToken) => {
   return isLoading === true ? (
     <div>En cours de chargement</div>
   ) : (
-    <div className="offercontainer">
-      <h2>{offer.product_name}</h2>
-      <span>Prix : {offer.product_price}</span>
-      <span>Description : {offer.product_description}</span>
+    <div className="offerbody">
+      <img
+        className="offerpicture"
+        src={offer.product_pictures[0].secure_url}
+        alt="imgprod"
+      />
+      <div className="offercontainer">
+        <h1>{offer.product_name}</h1>
+        <h2>Prix : {offer.product_price}€</h2>
+        <p>Description : {offer.product_description}</p>
 
-      <div>
-        {offer.product_details.map((item, index) => {
-          const keys = Object.keys(item);
+        <div>
+          {offer.product_details.map((item, index) => {
+            const keys = Object.keys(item);
 
-          return (
-            <div key={index}>
-              {keys[0]} : {item[keys[0]]}
-            </div>
-          );
-        })}
+            return (
+              <div key={index}>
+                {keys[0]} : {item[keys[0]]}
+              </div>
+            );
+          })}
 
-        <button
-          onClick={(userToken) => {
-            handlepayment(userToken);
+          <button
+            onClick={() => {
+              handlepayment(usertoken);
 
-            // console.log(handlepayment);
-          }}
-        >
-          Acheter
-        </button>
+              // console.log(handlepayment);
+            }}
+          >
+            Acheter
+          </button>
+        </div>
       </div>
     </div>
   );

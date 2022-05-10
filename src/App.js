@@ -1,4 +1,8 @@
 import "./App.css";
+import "./asset/offer.scss";
+import "./asset/home.css";
+import "./asset/home.scss";
+import "./asset/offer.css";
 
 import React, { useState } from "react";
 // import axios from "axios";
@@ -17,9 +21,9 @@ import Payment from "./containers/payment";
 // import logo from "./img/vinted9809.";
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("usertoken") || null);
+  const [usertoken, setUserToken] = useState(Cookies.get("usertoken") || null);
 
-  console.log(userToken);
+  console.log(usertoken);
   const handleToken = (token) => {
     if (token) {
       Cookies.set("usertoken", token, { expires: 7 });
@@ -31,16 +35,19 @@ function App() {
   };
   return (
     <Router>
-      <Header handleToken={handleToken} userToken={userToken} />
+      <Header handleToken={handleToken} usertoken={usertoken} />
       <Routes>
         {/*  */}
         <Route path="/" element={<Home />} />
-        <Route path="/offer/:id" element={<Offer />} />
+        <Route
+          path="/offer/:id"
+          element={<Offer handleToken={handleToken} usertoken={usertoken} />}
+        />
         <Route path="/signup" element={<Sign handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route
           path="/publish"
-          element={<Publish handleToken={handleToken} userToken={userToken} />}
+          element={<Publish handleToken={handleToken} usertoken={usertoken} />}
         />
         <Route
           path="/payment"

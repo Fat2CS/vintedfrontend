@@ -36,7 +36,7 @@ const Payment = () => {
             <span> {shippingPrice}€</span>
           </li>
         </ul>
-        <Elements stripe={stripePromise}></Elements>
+        <Elements stripe={stripePromise} />
         <CheckoutForm />
       </div>
       // <span> {title} </span>

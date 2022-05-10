@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import banner from "../img/banner.jpg";
-import "./home.scss";
+// import "./home.scss";
 
 const Home = () => {
   const [offers, setOffers] = useState({});

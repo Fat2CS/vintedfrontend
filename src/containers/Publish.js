@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 // import { useParams } from "react-router-dom";
 
-const Publish = ({ userToken }) => {
+const Publish = ({ usertoken }) => {
   const [title, setTitle] = useState("ddd");
   const [description, setdescription] = useState("dvddv");
   const [price, setprice] = useState("45");
@@ -33,13 +33,13 @@ const Publish = ({ userToken }) => {
       formData.append("color", color);
       formData.append("picture", picture);
       // formData.append();
-      console.log(userToken);
+      console.log(usertoken);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
         {
           headers: {
-            authorization: `Bearer ${userToken}`
+            authorization: `Bearer ${usertoken}`
           }
         }
       );
