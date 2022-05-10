@@ -1,0 +1,29 @@
+.recherche {
+  outline: 0, 0, 0 solid 0px;
+  width: 590px;
+  padding-left: 40px;
+  background-color: #f5f6f7;
+  border-radius: 5px;
+  height: 37px;
+  border: 0px none(0, 0, 0);
+  font-family: "Maison Neue";
+  font-size: 16px;
+}
+
+input {
+  border: none;
+}
+
+button {
+  cursor: pointer;
+  height: 30px;
+  width: 115px;
+  border: 1px solid #2cb1ba;
+  border-radius: 5px;
+  font-family: "Maison Neue";
+  font-size: 12px;
+  background-color: white;
+  color: #2cb1ba;
+  margin-right: 20px;
+}
+/*# sourceMappingURL=header.css.map */

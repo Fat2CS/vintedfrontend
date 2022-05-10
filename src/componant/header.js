@@ -2,7 +2,7 @@ import logo from "../img/vinted9809.jpeg";
 import { Link } from "react-router-dom";
 import "./header.scss";
 
-const Header = ({ handleToken, usertoken }) => {
+const Header = ({ handleToken, userToken }) => {
   return (
     <header>
       <div className="logo">
@@ -15,7 +15,7 @@ const Header = ({ handleToken, usertoken }) => {
 
       {/* BOUTON HEADER */}
 
-      {!usertoken ? (
+      {!userToken ? (
         <>
           <div className="recherche">
             <input placeholder="recherche des articles"></input>
@@ -26,6 +26,9 @@ const Header = ({ handleToken, usertoken }) => {
             </Link>
             <Link to="/login">
               <button>se connecter</button>
+            </Link>
+            <Link to="/Publish">
+              <button>vends tes articles</button>
             </Link>
           </div>
         </>
@@ -38,7 +41,6 @@ const Header = ({ handleToken, usertoken }) => {
           >
             Déconnexion
           </button>
-          <button>vends tes articles</button>
         </>
       )}
     </header>

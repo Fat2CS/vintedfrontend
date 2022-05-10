@@ -49,9 +49,11 @@ const Home = () => {
           <div className="square">
             <h3> Prêt à faire du tri dans vos placards</h3>
 
-            <button>
-              <p>Commencer à vendre</p>
-            </button>
+            <Link to="./Publish">
+              <button>
+                <p>Commencer à vendre</p>
+              </button>
+            </Link>
           </div>
         </div>
         <main>

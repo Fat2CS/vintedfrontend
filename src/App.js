@@ -12,18 +12,20 @@ import Sign from "./containers/Signup";
 import Login from "./containers/login";
 import Header from "./componant/header";
 import Publish from "./containers/Publish";
+import Payment from "./containers/payment";
 
 // import logo from "./img/vinted9809.";
 
 function App() {
-  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
+  const [userToken, setUserToken] = useState(Cookies.get("usertoken") || null);
 
+  console.log(userToken);
   const handleToken = (token) => {
     if (token) {
       Cookies.set("usertoken", token, { expires: 7 });
       setUserToken(token);
     } else {
-      Cookies.remove("userToken");
+      Cookies.remove("usertoken");
       setUserToken(null);
     }
   };
@@ -38,7 +40,11 @@ function App() {
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route
           path="/publish"
-          element={<Publish handleToken={handleToken} />}
+          element={<Publish handleToken={handleToken} userToken={userToken} />}
+        />
+        <Route
+          path="/payment"
+          element={<Payment handleToken={handleToken} />}
         />
       </Routes>
     </Router>
