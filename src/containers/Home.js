@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-
+import Pagination from "../componant/Pagination";
+import Limit from "../componant/Limit";
 import banner from "../img/banner.jpg";
 // import "./home.scss";
 
-const Home = () => {
+const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
   const [offers, setOffers] = useState({});
   const [isloading, setIsLoading] = useState(true);
 
@@ -24,10 +25,7 @@ const Home = () => {
     <span> En cours de chargement</span>
   ) : (
     <div>
-      Home
-      {/* <Link to={"/containers/Offer"}> Go to Offer</Link> */}
       <div className="Head">
-        {/* affichage photos */}
         <div className="App">
           <p>grosse Photo</p>
           <img
@@ -56,13 +54,32 @@ const Home = () => {
             </Link>
           </div>
         </div>
+        {/* <div className="container filter-container">
+          <h3>{data.count} items</h3>
+          console.log(data.count)
+          <div className="limit">
+            <limit setLimit={setLimit} />
+          </div>
+          <Pagination
+            setSwitchPage={setSwitchPage}
+            switchPage={switchPage}
+            limit={Limit}
+            data={data}
+          />
+        </div> */}
         <main>
           {offers.map((offer, index) => {
             return (
-              <Link to={`/offer/${offer._id}`}>
+              <Link
+                to={`/offer/${offer._id}`}
+                style={{ textDecoration: "none" }}
+              >
                 <div key={index}>
                   <div className="annonce">
-                    {/* <p>{offer.owner.account.avatar.secure_url}</p> */}
+                    {/* <img
+                      src={offer.owner.account.username.avatar[0].secure_url}
+                      alt="avatar"
+                    /> */}
                     <p>{offer.owner.account.username}</p>
                     {offer.product_pictures[0] ? (
                       <img

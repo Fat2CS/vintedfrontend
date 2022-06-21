@@ -5,13 +5,15 @@ import "./header.scss";
 const Header = ({ handleToken, userToken }) => {
   return (
     <header>
-      <div className="logo">
-        <img
-          alt="logo"
-          src={logo}
-          style={{ height: "90px", display: "flex" }}
-        />
-      </div>
+      <Link to="./">
+        <div className="logo">
+          <img
+            alt="logo"
+            src={logo}
+            style={{ height: "90px", display: "flex" }}
+          />
+        </div>
+      </Link>
 
       {/* BOUTON HEADER */}
 
