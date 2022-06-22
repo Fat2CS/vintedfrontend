@@ -59,7 +59,6 @@ form {
   display: flex;
   /* justify-content: space-around; */
   flex-direction: column;
-  border: solid red;
 }
 
 form input {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import "../asset/signup.scss";
 // import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -34,53 +35,61 @@ const Sign = ({ handleToken }) => {
   };
   return (
     <div>
-      <h1>S'inscrire</h1>
+      <main>
+        <form className="signup-container" onSubmit={handleSubmit}>
+          <h1>S'inscrire</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          value={username}
-          type="text"
-          placeholder="nom d'utilisateur"
-          onChange={(event) => {
-            setName(event.target.value);
-          }}
-        />
-        <input
-          value={email}
-          type="email"
-          placeholder="Email"
-          onChange={(event) => {
-            setEmail(event.target.value);
-          }}
-        />
-        <input
-          value={password}
-          type="password"
-          placeholder="Mot de passe"
-          onChange={(event) => {
-            setPassword(event.target.value);
-          }}
-        />
-        <div className="checkbox_container">
-          <div className="checkbox">
-            <input
-              className="checkbox_input"
-              type="checkbox"
-              onClick={() => {
-                setNewsletter(!newsletter);
-              }}
-            />
-            <span>S'inscrire à notre lewsletter</span>
+          <input
+            value={username}
+            type="text"
+            placeholder="nom d'utilisateur"
+            onChange={(event) => {
+              setName(event.target.value);
+            }}
+          />
+          <input
+            value={email}
+            type="email"
+            placeholder="Email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
+          <input
+            value={password}
+            type="password"
+            placeholder="Mot de passe"
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
+          />
+          <div className="checkbox_container">
+            <div className="checkbox">
+              <input
+                className="checkbox_input"
+                type="checkbox"
+                onClick={() => {
+                  setNewsletter(!newsletter);
+                }}
+              />
+
+              <span>S'inscrire à notre lewsletter</span>
+            </div>
+            <div className="inscription">
+              <p>
+                En m'inscrivant je confirme avoir lu et accepté les Termes &
+                Conditions et Politique de Confidentialité de Vinted. Je
+                confirme avoir au moins 18 ans.
+              </p>
+            </div>
           </div>
-          <p>
-            En m'inscrivant je confirme avoir lu et accepté les Termes &
-            Conditions et Politique de Confidentialité de Vinted. Je confirme
-            avoir au moins 18 ans.
-          </p>
-        </div>
-        <input className="subsign" type="submit" value="s'inscrire" />
-        <Link to={"/login"}>Tu as déjà un compte ? Connecte-toi !</Link>
-      </form>
+          <input className="subsign" type="submit" value="s'inscrire" />
+          <div></div>
+          <Link style={{ color: "#2cb1ba", border: "none" }} to={"/login"}>
+            Tu as déjà un compte ? Connecte-toi !
+          </Link>
+        </form>
+      </main>
     </div>
   );
 };

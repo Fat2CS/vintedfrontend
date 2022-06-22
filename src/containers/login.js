@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "../asset/login.scss";
 
 const Login = ({ handleToken }) => {
   const [email, seteMail] = useState("");
@@ -25,9 +26,9 @@ const Login = ({ handleToken }) => {
     }
   };
   return (
-    <div className="form">
-      <h1>Se connecter</h1>
-      <form onSubmit={handleSubmit}>
+    <div>
+      <form className="formco" onSubmit={handleSubmit}>
+        <h1>Se connecter</h1>
         <input
           className="form"
           valeur={email}

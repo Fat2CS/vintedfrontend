@@ -1,0 +1,37 @@
+main {
+  border: none;
+}
+
+.formco {
+  display: flex;
+  //   justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  width: 40vw;
+  margin: 50px auto;
+  height: 70vh;
+
+  .form {
+    display: flex;
+    margin-top: 3rem;
+    border: none;
+  }
+}
+.formco input {
+  width: 50%;
+  border-bottom: pink;
+  margin-bottom: 50px;
+
+  height: 60px;
+  border-radius: 3px;
+}
+.subm {
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  font-size: medium;
+  background-color: #09aeb7;
+  input {
+    height: 200px;
+  }
+}
