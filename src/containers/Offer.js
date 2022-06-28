@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -24,15 +24,15 @@ const Offer = ({ usertoken }) => {
     fetchData();
   }, [id]);
 
-  const handlepayment = () => {
-    if (usertoken) {
-      navigate("/payment", {
-        state: { title: offer.product_name, price: offer.product_price }
-      });
-    } else {
-      navigate("/signup");
-    }
-  };
+  // const handlepayment = () => {
+  //   if (usertoken) {
+  //     navigate("/payment", {
+  //       state: { title: offer.product_name, price: offer.product_price }
+  //     });
+  //   } else {
+  //     navigate("/signup");
+  //   }
+  // };
 
   return isLoading === true ? (
     <div>En cours de chargement</div>
@@ -59,15 +59,20 @@ const Offer = ({ usertoken }) => {
             );
           })}
 
-          <button
-            onClick={() => {
-              handlepayment(usertoken);
-
-              // console.log(handlepayment);
-            }}
+          <Link
+            to="/payment"
+            state={{ title: offer.product_name, price: offer.product_price }}
           >
-            Acheter
-          </button>
+            <button
+            // onClick={() => {
+            //   handlepayment(usertoken);
+
+            //   // console.log(handlepayment);
+            // }}
+            >
+              Acheter
+            </button>
+          </Link>
         </div>
       </div>
     </div>

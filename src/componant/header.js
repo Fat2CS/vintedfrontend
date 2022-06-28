@@ -14,9 +14,8 @@ const Header = ({ handleToken, userToken }) => {
           />
         </div>
       </Link>
-
       {/* BOUTON HEADER */}
-
+      {/* si userToken n'est pas connecté s'incrire et se connécté sinon déconnexion */}
       {!userToken ? (
         <>
           <div className="recherche">
@@ -29,22 +28,24 @@ const Header = ({ handleToken, userToken }) => {
             <Link to="/login">
               <button>se connecter</button>
             </Link>
-            <Link to="/Publish">
-              <button>vends tes articles</button>
-            </Link>
           </div>
         </>
       ) : (
         <>
-          <button
-            onClick={() => {
-              handleToken();
-            }}
-          >
-            Déconnexion
-          </button>
+          <div className="deconnect">
+            <button
+              onClick={() => {
+                handleToken();
+              }}
+            >
+              Déconnexion
+            </button>
+          </div>
         </>
       )}
+      <Link to="/Publish">
+        <button>vends tes articles</button>
+      </Link>
     </header>
   );
 };

@@ -25,19 +25,18 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
     <span> En cours de chargement</span>
   ) : (
     <div>
-      <div className="Head">
+      <div className="home">
         <div className="App">
-          <p>grosse Photo</p>
           <img
             alt="banniere"
             src={banner}
             style={{
-              width: "1720px",
+              width: "1686px",
               height: "454px",
               backgroundsize: "cover",
               objectFit: "cover",
 
-              marginTop: "-6%",
+              // marginTop: "-6%",
               position: "relative",
               backgroundposition: "50%50%",
               borderslice: "50 0 50 0 fill",
@@ -54,20 +53,8 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
             </Link>
           </div>
         </div>
-        {/* <div className="container filter-container">
-          <h3>{data.count} items</h3>
-          console.log(data.count)
-          <div className="limit">
-            <limit setLimit={setLimit} />
-          </div>
-          <Pagination
-            setSwitchPage={setSwitchPage}
-            switchPage={switchPage}
-            limit={Limit}
-            data={data}
-          />
-        </div> */}
-        <main>
+
+        <main className="offers">
           {offers.map((offer, index) => {
             return (
               <Link

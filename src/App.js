@@ -3,7 +3,12 @@ import "./asset/offer.scss";
 import "./asset/home.css";
 import "./asset/home.scss";
 import "./asset/offer.css";
+import "./asset/fonts/transfonter.org-20220510-212901/stylesheetFont.css";
 
+// import "./asset/stylesheet.css";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+import CheckoutForm from "./componant/CheckoutForm";
 import React, { useState } from "react";
 // import axios from "axios";
 import Cookies from "js-cookie";
@@ -18,40 +23,42 @@ import Header from "./componant/header";
 import Publish from "./containers/Publish";
 import Payment from "./containers/payment";
 
-// import logo from "./img/vinted9809.";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+library.add(faPlus);
 
 function App() {
-  const [usertoken, setUserToken] = useState(Cookies.get("usertoken") || null);
+  const [userToken, setUserToken] = useState(Cookies.get("userToken") || null);
 
-  console.log(usertoken);
+  console.log(userToken);
   const handleToken = (token) => {
     if (token) {
-      Cookies.set("usertoken", token, { expires: 7 });
+      Cookies.set("userToken", token, { expires: 7 });
       setUserToken(token);
     } else {
-      Cookies.remove("usertoken");
+      Cookies.remove("userToken");
       setUserToken(null);
     }
   };
   return (
     <Router>
-      <Header handleToken={handleToken} usertoken={usertoken} />
+      <Header handleToken={handleToken} userToken={userToken} />
       <Routes>
         {/*  */}
         <Route path="/" element={<Home />} />
         <Route
           path="/offer/:id"
-          element={<Offer handleToken={handleToken} usertoken={usertoken} />}
+          element={<Offer handleToken={handleToken} userToken={userToken} />}
         />
         <Route path="/signup" element={<Sign handleToken={handleToken} />} />
         <Route path="/login" element={<Login handleToken={handleToken} />} />
         <Route
           path="/publish"
-          element={<Publish handleToken={handleToken} usertoken={usertoken} />}
+          element={<Publish handleToken={handleToken} userToken={userToken} />}
         />
         <Route
           path="/payment"
-          element={<Payment handleToken={handleToken} />}
+          element={<Payment handleToken={handleToken} usertoken={userToken} />}
         />
       </Routes>
     </Router>

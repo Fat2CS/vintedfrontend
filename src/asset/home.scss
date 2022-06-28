@@ -53,3 +53,57 @@ h4 p {
 .annonce img {
   margin-bottom: -10px;
 }
+
+@media (max-width: 1100px) {
+  .home {
+    .App-img {
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .square {
+      position: relative !important;
+      top: 10px !important;
+      left: 10px !important;
+      h1 {
+        font-size: 28px;
+      }
+    }
+  }
+
+  .annonce img {
+    min-width: 310px;
+    height: 430px;
+  }
+}
+
+@media (max-width: 730px) {
+  .home {
+    .APP img {
+      height: 200px;
+    }
+
+    .square {
+      position: relative !important;
+      top: 10px !important;
+      left: 0px !important;
+      width: 100%;
+      h1 {
+        font-size: 26px;
+      }
+    }
+  }
+
+  .offers {
+    justify-content: center;
+
+    .annonce {
+      .offer img {
+        max-width: 282px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -46,7 +46,14 @@ const Login = ({ handleToken }) => {
             setPassword(event.target.value);
           }}
         />
-        <input className="subm" type="submit" value="se connecter" />
+        <div className="submitbut">
+          {" "}
+          <input
+            className="submconnect"
+            type="submit"
+            value="se connecter"
+          />{" "}
+        </div>
       </form>
     </div>
   );
