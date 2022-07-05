@@ -32,7 +32,7 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
             src={banner}
             style={{
               width: "100vw",
-              height: "454px",
+              height: "554px",
               backgroundsize: "cover",
               objectFit: "cover",
 
