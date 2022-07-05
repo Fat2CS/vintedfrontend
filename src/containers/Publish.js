@@ -3,10 +3,8 @@ import { Navigate } from "react-router-dom";
 import axios from "axios";
 import "../asset/publish.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { FaPlus } from "@fortawesome/react-fontawesome";
-// import { useParams } from "react-router-dom";
 
-const Publish = ({ usertoken }) => {
+const Publish = ({ userToken }) => {
   const [title, setTitle] = useState("ddd");
   const [description, setdescription] = useState("dvddv");
   const [price, setprice] = useState("45");
@@ -38,13 +36,13 @@ const Publish = ({ usertoken }) => {
       formData.append("color", color);
       formData.append("picture", picture);
       // formData.append();
-      console.log(usertoken);
+      console.log(userToken);
       const response = await axios.post(
         "https://lereacteur-vinted-api.herokuapp.com/offer/publish",
         formData,
         {
           headers: {
-            authorization: `Bearer ${usertoken}`
+            authorization: `Bearer ${userToken}`
           }
         }
       );
@@ -59,15 +57,15 @@ const Publish = ({ usertoken }) => {
 
   return (
     <>
-      {usertoken ? (
-        <section>
+      {userToken ? (
+        <section className="sectionpublish">
           <div className="container">
             <div className="pubcontainer">
               <h2>Vends ton article </h2>
               <form className="inputform" onSubmit={handleSendPicture}>
                 <div className="filecontainer">
                   <label htmlFor="file">
-                    <FontAwesomeIcon icon="fa-solid fa-plus" size="5x" />{" "}
+                    <FontAwesomeIcon icon="fa-solid fa-plus" size="4x" />{" "}
                     Ajouter une photo
                   </label>
                   <input

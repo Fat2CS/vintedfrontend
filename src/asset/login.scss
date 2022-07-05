@@ -4,7 +4,7 @@ main {
 
 .formco {
   display: flex;
-  //   justify-content: space-between;
+
   align-items: center;
   flex-direction: column;
   width: 40vw;
@@ -35,14 +35,13 @@ main {
 .submitbut {
   height: 4rem;
   width: 8rem;
-  margin-right: 8rem;
+  margin-right: 11rem;
   margin-top: 3rem;
 }
 .submitbut input {
   background-color: #09aeb7;
   width: 280%;
-  //   display: flex;
-  //   justify-content: center;
+
   margin-right: -40px;
   margin-left: -20px;
   border-radius: 3px;

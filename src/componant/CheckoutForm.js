@@ -44,12 +44,11 @@ const CheckoutForm = ({ title, price }) => {
 
   return (
     <div className="chekout">
-      {" "}
       <form onSubmit={handlePayment}>
         <CardElement />
         <input type="submit" value="Pay" disabled={disabled} />
         <span style={{ color: "green" }}>{confirmMessage}</span>
-      </form>{" "}
+      </form>
     </div>
   );
 };

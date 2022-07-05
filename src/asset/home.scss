@@ -49,7 +49,9 @@ h4 p {
   margin-bottom: 60px;
   align-content: space-around;
 }
-
+.offers {
+  margin-left: 7rem;
+}
 .annonce img {
   margin-bottom: -10px;
 }
@@ -70,7 +72,9 @@ h4 p {
       }
     }
   }
-
+  .annonce {
+    margin-top: 5rem;
+  }
   .annonce img {
     min-width: 310px;
     height: 430px;
@@ -92,18 +96,17 @@ h4 p {
         font-size: 26px;
       }
     }
+    .square button {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-content: center;
+
+      margin: 1rem -22px;
+    }
   }
 
   .offers {
-    justify-content: center;
-
-    .annonce {
-      .offer img {
-        max-width: 282px;
-        img {
-          width: 100%;
-        }
-      }
-    }
+    display: none;
   }
 }

@@ -34,3 +34,12 @@ button {
   color: azure;
   margin-left: 45rem;
 }
+@media screen and (max-width: 940px) {
+  header {
+    display: block;
+    width: 100%;
+  }
+  button {
+    display: none;
+  }
+}

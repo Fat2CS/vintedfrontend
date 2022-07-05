@@ -1,5 +1,58 @@
 h1,
 h2,
+p,
 span {
   font-family: "Font";
+  font-weight: bold;
+  font-size: medium;
+  color: rgb(104, 97, 97);
+}
+
+.payment-page {
+  box-sizing: border-box;
+  .container-payment-page {
+    padding-top: 50px;
+    max-width: 600px;
+    background-color: white;
+    margin: 50px auto;
+    padding: 20px;
+
+    .payment-detail-container {
+      border-bottom: 1px solid #b0b4b5;
+      padding-bottom: 50px;
+      .payment-detail {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  .total-container {
+    padding: 50px 0px;
+    border-bottom: 1px solid #b0b4b5;
+
+    .total {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  .card-container {
+    border-bottom: 1px solid #b0b4b5;
+
+    height: 100px;
+    padding-top: 20px;
+  }
+
+  .card-containe:hover {
+    opacity: 0.8;
+  }
+  .pay-btn {
+    width: 100%;
+    background-color: #00bb6a;
+    border: none;
+    color: white;
+    height: 44px;
+    border-radius: 5px;
+  }
 }

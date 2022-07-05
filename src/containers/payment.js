@@ -27,38 +27,48 @@ const Payment = ({ usertoken }) => {
     "pk_test_51HCObyDVswqktOkX6VVcoA7V2sjOJCUB4FBt3EOiAdSz5vWudpWxwcSY8z2feWXBq6lwMgAb5IVZZ1p84ntLq03H00LDVc2RwP"
   );
   return (
-    <>
-      {/* usertoken ? ( */}
-      <div>
-        {/* pour cette exemple on va utiliser le cookie */}
-        <div className="formcontainer">
-          <p>Résumé de la commande</p>;
-          <ul>
-            <li>
-              <span>commande </span>
-              <span> Nom de l'offre : </span> <span>{title}</span>
-              <span> {total}€</span>
-            </li>
-            <li>
-              <span>Frais protecion acheteurs</span>
-              {/* <span> {protectBuyer}€</span>{" "} */}
-            </li>
+    <section className="payment-page">
+      <div className="container-payment-page">
+        <p>Résumé de la commande</p>
 
-            <li>
-              <span>Frais de port </span>
-              {/* <span> {shippingPrice}€</span> */}
-            </li>
-          </ul>
+        <div className="payment-detail-container">
+          <div className="payment-detail">
+            <span>Commande</span>
+            <span>{price.toFixed(2)} €</span>
+          </div>
+
+          <div className="payment-detail">
+            <span>Frais protection acheteurs</span>
+            <span>{protectBuyer.toFixed(2)} €</span>
+          </div>
+
+          <div className="payment-detail">
+            <span>Frais de port</span>
+            <span>{shippingPrice.toFixed(2)} €</span>
+          </div>
+        </div>
+
+        <div className="total-container">
+          <div className="total">
+            <span>Total</span>
+            <span>{total.toFixed(2)}€</span>
+          </div>
+          <div>
+            <p>
+              Il ne vous reste plus qu'un étape pour vous offrir pull a perle.
+              Vous allez payer {total.toFixed(2)} € (frais de protection et
+              frais de port inclus).
+            </p>
+          </div>
+        </div>
+
+        <div className="card-container">
           <Elements stripe={stripePromise}>
-            <CheckoutForm title={title} price={price} />
+            <CheckoutForm total={total} title={title} />
           </Elements>
         </div>
-        // <span> {title} </span>
-        <h2> payer</h2>
-        {/* ):( */}
-        {/* <Navigate to="/login" />) */}
       </div>
-    </>
+    </section>
   );
 };
 

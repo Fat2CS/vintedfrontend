@@ -7,7 +7,7 @@ main {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  width: 40vw;
+  max-width: 40vw;
   margin: 50px auto;
   height: 70vh;
   border: none;
@@ -32,4 +32,11 @@ main {
   display: flex;
   justify-content: center;
   font-size: medium;
+}
+@media (max-with: 1100px) {
+  .checkbox {
+    margin-bottom: 25rem;
+
+    background-color: brown;
+  }
 }

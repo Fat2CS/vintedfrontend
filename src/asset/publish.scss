@@ -15,6 +15,8 @@ section {
   margin: auto 14rem;
 }
 .pubcontainer {
+  max-width: 1420px;
+  border: solid red 2px;
   h2 {
     margin-left: 40px;
   }
@@ -53,12 +55,15 @@ label {
   margin-left: 46px;
   margin-right: 6px;
   height: 90px;
+  display: flex;
+
   h3 {
     margin-left: 20px;
   }
   input {
-    width: 79%;
-    border-bottom: solid gray;
+    // width: 79%;
+    margin: 2rem 2rem;
+    color: gray;
   }
 }
 .describ {
@@ -66,10 +71,15 @@ label {
   margin-left: 46px;
   margin-right: 6px;
   margin-top: -50px;
+  display: flex;
 
   h3 {
     margin-left: 20px;
   }
+}
+.describ input {
+  margin-top: 1rem;
+  margin-left: 3rem;
 }
 .block2 {
   background-color: white;
@@ -80,9 +90,7 @@ label {
     margin-left: 20px;
   }
 }
-.input {
-  border-bottom: solid 2px gray;
-}
+
 .submconnect {
   background-color: white;
 }
@@ -95,9 +103,13 @@ label {
   background-color: white;
   margin-right: 6px;
   margin-top: 20px;
+  display: flex;
   h3 {
     margin-left: 20px;
   }
+}
+.priceBlock input {
+  margin: 1rem 2rem;
 }
 .ajout {
   width: 50px;
@@ -119,5 +131,11 @@ label {
   display: flex;
   span {
     margin-left: -50px;
+  }
+}
+//  medio Queries
+@media screen and (max-width: 1024px) {
+  .sectionpublish {
+    max-width: 100%;
   }
 }

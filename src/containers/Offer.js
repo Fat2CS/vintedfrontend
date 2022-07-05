@@ -3,14 +3,14 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const Offer = ({ usertoken }) => {
+const Offer = ({ userToken }) => {
   const { id } = useParams();
   console.log(id);
   const navigate = useNavigate();
   const [offer, setOffers] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  console.log(usertoken, "<<<<<<<");
+  console.log(userToken, "<<<<<<<");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -24,15 +24,15 @@ const Offer = ({ usertoken }) => {
     fetchData();
   }, [id]);
 
-  // const handlepayment = () => {
-  //   if (usertoken) {
-  //     navigate("/payment", {
-  //       state: { title: offer.product_name, price: offer.product_price }
-  //     });
-  //   } else {
-  //     navigate("/signup");
-  //   }
-  // };
+  const handlepayment = () => {
+    if (userToken) {
+      navigate("/payment", {
+        state: { title: offer.product_name, price: offer.product_price }
+      });
+    } else {
+      navigate("/signup");
+    }
+  };
 
   return isLoading === true ? (
     <div>En cours de chargement</div>
@@ -64,11 +64,11 @@ const Offer = ({ usertoken }) => {
             state={{ title: offer.product_name, price: offer.product_price }}
           >
             <button
-            // onClick={() => {
-            //   handlepayment(usertoken);
+              onClick={() => {
+                handlepayment(userToken);
 
-            //   // console.log(handlepayment);
-            // }}
+                console.log(handlepayment);
+              }}
             >
               Acheter
             </button>

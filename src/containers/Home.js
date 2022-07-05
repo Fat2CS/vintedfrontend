@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Pagination from "../componant/Pagination";
 import Limit from "../componant/Limit";
 import banner from "../img/banner.jpg";
-// import "./home.scss";
+import "../asset/home.scss";
 
 const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
   const [offers, setOffers] = useState({});
@@ -31,12 +31,11 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
             alt="banniere"
             src={banner}
             style={{
-              width: "1686px",
+              width: "100vw",
               height: "454px",
               backgroundsize: "cover",
               objectFit: "cover",
 
-              // marginTop: "-6%",
               position: "relative",
               backgroundposition: "50%50%",
               borderslice: "50 0 50 0 fill",
@@ -46,7 +45,7 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
           <div className="square">
             <h3> Prêt à faire du tri dans vos placards</h3>
 
-            <Link to="./Publish">
+            <Link to="./Publish" style={{ textDecoration: "none" }}>
               <button>
                 <p>Commencer à vendre</p>
               </button>
@@ -63,10 +62,6 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
               >
                 <div key={index}>
                   <div className="annonce">
-                    {/* <img
-                      src={offer.owner.account.username.avatar[0].secure_url}
-                      alt="avatar"
-                    /> */}
                     <p>{offer.owner.account.username}</p>
                     {offer.product_pictures[0] ? (
                       <img
