@@ -5,7 +5,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 import CheckoutForm from "../componant/CheckoutForm";
-
+import { useLocation } from "react-router-dom";
 // import axios from "axios";
 
 const Payment = ({ usertoken }) => {
