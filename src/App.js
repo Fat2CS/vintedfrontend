@@ -5,10 +5,6 @@ import "./asset/home.scss";
 import "./asset/offer.css";
 import "./asset/fonts/transfonter.org-20220510-212901/stylesheetFont.css";
 
-// import "./asset/stylesheet.css";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./componant/CheckoutForm";
 import React, { useState } from "react";
 // import axios from "axios";
 import Cookies from "js-cookie";

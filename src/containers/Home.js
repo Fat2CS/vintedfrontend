@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import Pagination from "../componant/Pagination";
-import Limit from "../componant/Limit";
+
 import banner from "../img/banner.jpg";
 import "../asset/home.scss";
 

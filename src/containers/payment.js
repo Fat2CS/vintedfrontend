@@ -1,6 +1,6 @@
 // import Cookies from "js-cookie";
 import "../asset/payment.scss";
-import { Navigate, useLocation } from "react-router-dom";
+
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
