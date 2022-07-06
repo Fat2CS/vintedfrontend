@@ -55,9 +55,9 @@ const Payment = ({ usertoken }) => {
           </div>
           <div>
             <p>
-              Il ne vous reste plus qu'un étape pour vous offrir pull a perle.
-              Vous allez payer {total.toFixed(2)} € (frais de protection et
-              frais de port inclus).
+              Il ne vous reste plus qu'un étape pour vous offrir {title}. Vous
+              allez payer {total.toFixed(2)} € (frais de protection et frais de
+              port inclus).
             </p>
           </div>
         </div>

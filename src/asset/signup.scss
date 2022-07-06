@@ -1,5 +1,6 @@
 main {
   border: none;
+  max-width: 100%;
 }
 
 .signup-container {
@@ -11,6 +12,7 @@ main {
   margin: 50px auto;
   height: 70vh;
   border: none;
+  margin-left: 20rem;
 }
 .signup-container input {
   width: 50%;
@@ -19,7 +21,7 @@ main {
 .checkbox {
   display: flex;
   span {
-    margin-left: -10rem;
+    margin-left: -8rem;
     font-size: larger;
   }
 }
