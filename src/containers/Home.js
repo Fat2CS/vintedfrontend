@@ -52,7 +52,7 @@ const Home = ({ data, setSwitchPage, switchPage, limit, setLimit }) => {
           </div>
         </div>
 
-        <main className="offers">
+        <main className="offers2">
           {offers.map((offer, index) => {
             return (
               <Link
