@@ -73,7 +73,7 @@ const Sign = ({ handleToken }) => {
                 }}
               />
 
-              <span>S'inscrire à notre lewsletter</span>
+              <span>S'inscrire à notre Newsletter</span>
             </div>
             <div className="inscription">
               <p>
