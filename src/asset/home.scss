@@ -102,30 +102,11 @@ h4 p {
 .item_details_bottom > p {
   margin-top: 4px;
 }
-// .description {
-//   -webkit-font-smoothing: antialiased;
-//   align-items: center;
-//   background: rgb(255, 255, 255) (27, 27, 27) none repeat scroll 0% 0% / auto
-//     padding-box border-box;
-//   box-sizing: border-box;
-//   display: flex;
-//   padding: -8px;
-//   position: relative;
-//   width: 181.328px;
-//   margin-bottom: 60px;
-//   align-content: space-around;
-// }
-// .offers2 {
-//   margin-left: 100px;
-// }
-// .annonce img {
-//   margin-bottom: -10px;
-// }
 
 @media (max-width: 1100px) {
   .home {
     .App-img {
-      height: 400px;
+      max-width: 100%;
       object-fit: cover;
     }
 
@@ -138,12 +119,11 @@ h4 p {
       }
     }
   }
-  .annonce {
-    margin-top: 5rem;
-  }
-  .annonce img {
-    min-width: 310px;
-    height: 430px;
+  .center {
+    max-width: 300%;
+    margin-left: 7rem;
+
+    flex-direction: column;
   }
 }
 
@@ -173,7 +153,7 @@ h4 p {
   }
 
   .offers {
-    display: none;
+    justify-content: center;
   }
   .item {
     max-width: 100%;
