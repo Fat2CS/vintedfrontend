@@ -56,8 +56,8 @@ const Home = ({ data }) => {
           {offers.map((item, index) => {
             return (
               <div key={index} className="item">
-                <div className="owner">
-                  {item.owner.account.avatar && (
+                {/* <div className="owner">
+                  {item.offers.owner.account.avatar && (
                     <img
                       className="avatar"
                       src={item.owner.account.avatar.secure_url}
@@ -65,7 +65,7 @@ const Home = ({ data }) => {
                     />
                   )}
                   <div className="username">{item.owner.account.username}</div>
-                </div>
+                </div> */}
                 <Link className="link" to={`/offer/${item._id}`}>
                   <div className="item_details">
                     <img
